@@ -224,6 +224,11 @@ footer{border-top:2px dashed var(--red);margin-top:2.5rem;padding:1.5rem 0 2.5re
       <div class="gal" data-photos="mielie-300"></div>
       <p class="muted" data-no-photos="mielie-300">Photos from the day are coming soon.</p>
     </div>
+    <div class="past">
+      <h3>The Mielie Run 300, 2025</h3>
+      <p>The 2025 run, and the badge that went with it.</p>
+      <div class="gal" data-photos="mielie-300-2025"></div>
+    </div>
     <p style="margin-top:1rem">Look through the gallery for photos from our past rides and events.</p>
     <div class="btns"><a class="btn g" href="#gallery" data-go="gallery">Open the gallery</a></div></div>
 </section>
@@ -231,20 +236,20 @@ footer{border-top:2px dashed var(--red);margin-top:2.5rem;padding:1.5rem 0 2.5re
 <!-- JOIN -->
 <section class="pg" data-page="join" hidden>
   <h1>Ready to ride with the crew?</h1>
-  <p class="muted" style="margin-top:.5rem">Joining is simple and friendly.</p>
+  <p class="muted" style="margin-top:.5rem">Here's how joining the club works.</p>
   <ol class="steps">
-    <li><strong>Say hi</strong>Message us on WhatsApp or fill in the short form.</li>
-    <li><strong>Come on a ride</strong>Meet the crew. No obligation.</li>
-    <li><strong>See if we click</strong>Enjoy a few rides together.</li>
-    <li><strong>Become one of us</strong>We'll chat about membership and club colours when you're ready.</li>
+    <li><strong>Meet the club</strong>Message us on WhatsApp and come say hi.</li>
+    <li><strong>Ride with us</strong>Join us on a few rides and get to know the crew.</li>
+    <li><strong>Get voted in</strong>You're presented at a club meeting, and the members vote you in.</li>
+    <li><strong>Prospect period</strong>As a prospect, you take part in a set number of rides and rallies.</li>
+    <li><strong>Full patch</strong>The club votes again, and you earn your full patch.</li>
   </ol>
   <div class="btns"><a class="btn p" data-c="whatsapp">Message us on WhatsApp</a></div>
-  <div class="btns" data-hide><a class="btn g" data-c="form">Fill in the join form</a></div>
   <div class="sec"><h2>Who can join</h2><p>Any rider with a valid licence and a roadworthy bike, from any experience level.</p></div>
   <div class="sec"><h2>Questions</h2>
     <details><summary>I'm a new rider. Is that okay?</summary><p>Absolutely. We ride at an easy pace and look out for each other.</p></details>
     <details><summary>Do I need a big bike?</summary><p>Bring what you ride. All bikes are welcome.</p></details>
-    <details><summary>Do I have to come to every ride?</summary><p>No. Come when you can.</p></details>
+    <details><summary>Do I have to come to every ride?</summary><p>Not every ride. As a prospect you'll need to make a set number of rides and rallies. Otherwise, come when you can.</p></details>
     <details><summary>What does it cost?</summary><p>Come on a ride first, with no obligation. Message us and we'll explain membership when you're ready.</p></details>
   </div>
 </section>
@@ -273,11 +278,10 @@ footer{border-top:2px dashed var(--red);margin-top:2.5rem;padding:1.5rem 0 2.5re
 var C = {
   whatsapp: '27715262515', // club WhatsApp number, international format, no + or spaces
   email: '',               // e.g. club@example.com
-  facebook: '',            // full link to your Facebook page
-  instagram: '',           // full link to your Instagram page
+  facebook: 'https://www.facebook.com/share/1JwyAggy3w/',          // full link to your Facebook page
+  instagram: 'https://www.instagram.com/theheathsmcc.vryburg/',   // full link to your Instagram page
   meeting: '',             // e.g. Old Chaps, Vryburg
   rideDay: '',             // e.g. the first Sunday of the month
-  form: 'https://docs.google.com/forms/d/1eQOCeP8I6oyc-Qa5ktlxKZurmT_3swGCoBFQMgkvjQU/viewform', // join form (Google Form)
   album: ''                // link to a shared photo album
 };
 // Photos: ['small picture', 'Caption', 'full-size picture (optional)']
@@ -291,11 +295,14 @@ var GALLERY = [
   ['images/gallery/small/club-shirt.jpg', 'The club shirt', 'images/gallery/club-shirt.jpg'],
   ['images/gallery/small/roadside-regroup.jpg', 'Roadside regroup', 'images/gallery/roadside-regroup.jpg'],
   ['images/gallery/small/night-lineup.jpg', 'Lined up under the lights', 'images/gallery/night-lineup.jpg'],
-  ['images/gallery/small/mielie-badge.jpg', 'The Mielie Run 300 cloth badge']
+  ['images/gallery/small/mielie-badge.jpg', 'Our badge from the 2025 Mielie Run 300']
 ];
 // Photos for each past event, shown on the Events page once the event is over.
 var EVENT_PHOTOS = {
   'mielie-300': [
+  ],
+  'mielie-300-2025': [
+    ['images/gallery/small/mielie-badge.jpg', 'The 2025 Mielie Run 300 badge']
   ]
 };
 /* ======================= */

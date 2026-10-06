@@ -13,7 +13,6 @@ Club details live near the bottom of `index.html`, in the block marked
 - `whatsapp`, `email`, `facebook`, `instagram`: contact links. Anything left
   empty is hidden on the site.
 - `meeting`, `rideDay`: where and when the club usually rides.
-- `form`: a link to a join form (for example a Google Form).
 - `album`: a link to a shared photo album.
 - `GALLERY`: photos for the Gallery page, one per line, like
   `['images/gallery/small/ride-1.jpg', 'Sunday breakfast run', 'images/gallery/ride-1.jpg'],`
@@ -21,7 +20,7 @@ Club details live near the bottom of `index.html`, in the block marked
   the full-size picture that opens when tapped, and can be left out. The first
   three photos also appear on the home page.
 - `EVENT_PHOTOS`: photos from a past event, in the same format, under that
-  event's name (for example `'mielie-300'`).
+  event's name (for example `'mielie-300'`, or `'mielie-300-2025'` for last year's run).
 
 Pictures go in the `images` folder.
 
