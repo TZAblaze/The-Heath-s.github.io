@@ -87,6 +87,11 @@ nav a.on{background:var(--gold);color:var(--ink)}
 .gal figure{break-inside:avoid;margin:0 0 .75rem}
 .gal img{width:100%;display:block;border-radius:14px;border:2px solid var(--navy)}
 .gal figcaption{color:var(--muted);font-size:.9rem;padding:.3rem .2rem}
+.gal a{display:block}
+.strip{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem;margin-top:1rem}
+.strip figure{margin:0}.strip figcaption{display:none}
+.strip img{width:100%;aspect-ratio:1;object-fit:cover;display:block;border-radius:14px;border:2px solid var(--navy)}
+.past{background:var(--navy);border-radius:22px;padding:1.4rem 1.3rem;margin-top:1rem}
 .empty{background:var(--navy);border:2px dashed var(--red);border-radius:22px;padding:1.5rem;margin-top:1rem}
 details{background:var(--navy);border-radius:14px;padding:.9rem 1.1rem;margin-bottom:.6rem;max-width:62ch}
 summary{cursor:pointer;font-weight:700;color:var(--gold)}
@@ -122,11 +127,21 @@ footer{border-top:2px dashed var(--red);margin-top:2.5rem;padding:1.5rem 0 2.5re
       <div class="card"><h3>Open arms</h3><p>All riders and all bikes are welcome. Come as you are and ride with us.</p></div>
     </div>
   </div>
-  <div class="sec"><div class="band">
+  <div class="sec">
+    <h2>From the road</h2>
+    <div id="homePhotos" class="strip"></div>
+    <div class="btns"><a class="btn g" href="#gallery" data-go="gallery">Open the gallery</a></div>
+  </div>
+  <div class="sec" data-until="2026-11-07"><div class="band">
     <h2>Next up: The Mielie 300 Run</h2>
     <p class="when">Saturday 7 November, starts 10:00, at Old Chaps Vryburg</p>
     <p>A 300km ride for the keen, and a day jol for everyone else.</p>
     <div class="btns"><a class="btn p" href="#events" data-go="events">See the details</a></div>
+  </div></div>
+  <div class="sec" data-from="2026-11-08" hidden><div class="band">
+    <h2>That's a wrap: The Mielie 300 Run</h2>
+    <p>Thank you to everyone who rode with us on 7 November. Photos from the day are on the Events page.</p>
+    <div class="btns"><a class="btn p" href="#events" data-go="events">See the photos</a></div>
   </div></div>
 </section>
 
@@ -180,7 +195,11 @@ footer{border-top:2px dashed var(--red);margin-top:2.5rem;padding:1.5rem 0 2.5re
 <!-- EVENTS -->
 <section class="pg" data-page="events" hidden>
   <h1>Events</h1>
-  <div class="sec"><div class="band">
+  <div class="sec" data-from="2026-11-08" hidden>
+    <p>No new events announced yet. Message us to hear about the next ride.</p>
+    <div class="btns"><a class="btn p" data-c="whatsapp">Message us on WhatsApp</a></div>
+  </div>
+  <div class="sec" data-until="2026-11-07"><div class="band">
     <h2>The Mielie 300 Run</h2>
     <p class="when">Saturday 7 November, starts 10:00, at Old Chaps Vryburg</p>
     <p>A 300km ride for the keen, and a day jol for everyone else. Every entry includes a cloth badge.</p>
@@ -197,7 +216,15 @@ footer{border-top:2px dashed var(--red);margin-top:2.5rem;padding:1.5rem 0 2.5re
     </div>
     <a class="zoom" href="images/mielie-300-poster.jpg" target="_blank" rel="noopener"><img class="poster" alt="Poster for The Mielie 300 Run, 7 November at Old Chaps Vryburg" src="images/mielie-300-poster.jpg" width="760" height="735" loading="lazy"><small>Tap the poster to open it full size</small></a>
   </div></div>
-  <div class="sec"><h2>Past events</h2><p>Look through the gallery for photos from our past rides and events.</p>
+  <div class="sec"><h2>Past events</h2>
+    <div class="past" data-from="2026-11-08" hidden>
+      <h3>The Mielie 300 Run</h3>
+      <p class="when">Saturday 7 November 2026, at Old Chaps Vryburg</p>
+      <p>A 300km ride for the keen, and a day jol for everyone else.</p>
+      <div class="gal" data-photos="mielie-300"></div>
+      <p class="muted" data-no-photos="mielie-300">Photos from the day are coming soon.</p>
+    </div>
+    <p style="margin-top:1rem">Look through the gallery for photos from our past rides and events.</p>
     <div class="btns"><a class="btn g" href="#gallery" data-go="gallery">Open the gallery</a></div></div>
 </section>
 
@@ -250,11 +277,27 @@ var C = {
   instagram: '',           // full link to your Instagram page
   meeting: '',             // e.g. Old Chaps, Vryburg
   rideDay: '',             // e.g. the first Sunday of the month
-  form: '',                // link to your join form (Google Form)
+  form: 'https://docs.google.com/forms/d/1eQOCeP8I6oyc-Qa5ktlxKZurmT_3swGCoBFQMgkvjQU/viewform', // join form (Google Form)
   album: ''                // link to a shared photo album
 };
-var GALLERY = [            // add photos like: ['https://...jpg', 'Caption']
+// Photos: ['small picture', 'Caption', 'full-size picture (optional)']
+// The first three gallery photos also show on the home page.
+var GALLERY = [
+  ['images/gallery/small/morning-stop.jpg', 'Morning stop on a group ride', 'images/gallery/morning-stop.jpg'],
+  ['images/gallery/small/three-riders.jpg', 'Three of the crew in club shirts', 'images/gallery/three-riders.jpg'],
+  ['images/gallery/small/club-colours.jpg', 'Club colours on the road', 'images/gallery/club-colours.jpg'],
+  ['images/gallery/small/fuel-stop-night.jpg', 'Fuel stop after dark', 'images/gallery/fuel-stop-night.jpg'],
+  ['images/gallery/small/ready-to-roll.jpg', 'Ready to roll', 'images/gallery/ready-to-roll.jpg'],
+  ['images/gallery/small/club-shirt.jpg', 'The club shirt', 'images/gallery/club-shirt.jpg'],
+  ['images/gallery/small/roadside-regroup.jpg', 'Roadside regroup', 'images/gallery/roadside-regroup.jpg'],
+  ['images/gallery/small/night-lineup.jpg', 'Lined up under the lights', 'images/gallery/night-lineup.jpg'],
+  ['images/gallery/small/mielie-badge.jpg', 'The Mielie Run 300 cloth badge']
 ];
+// Photos for each past event, shown on the Events page once the event is over.
+var EVENT_PHOTOS = {
+  'mielie-300': [
+  ]
+};
 /* ======================= */
 document.querySelectorAll('[data-c]').forEach(function(el){
   var k=el.getAttribute('data-c'), v=C[k], box=el.closest('[data-hide]')||el;
@@ -264,14 +307,30 @@ document.querySelectorAll('[data-c]').forEach(function(el){
     if(k!=='email'){el.target='_blank';el.rel='noopener';}
   } else { el.textContent=v; }
 });
-var g=document.getElementById('gal');
-GALLERY.forEach(function(p){
-  var f=document.createElement('figure'),i=document.createElement('img');
-  i.src=p[0];i.alt=p[1]||'Club ride photo';i.loading='lazy';f.appendChild(i);
-  if(p[1]){var c=document.createElement('figcaption');c.textContent=p[1];f.appendChild(c);}
-  g.appendChild(f);
-});
+function showPhotos(box, list){
+  list.forEach(function(p){
+    var f=document.createElement('figure'),i=document.createElement('img');
+    i.src=p[0];i.alt=p[1]||'Club ride photo';i.loading='lazy';
+    if(p[2]){var a=document.createElement('a');a.href=p[2];a.target='_blank';a.rel='noopener';a.appendChild(i);f.appendChild(a);}
+    else f.appendChild(i);
+    if(p[1]){var c=document.createElement('figcaption');c.textContent=p[1];f.appendChild(c);}
+    box.appendChild(f);
+  });
+}
+showPhotos(document.getElementById('gal'), GALLERY);
 document.getElementById('galEmpty').hidden = GALLERY.length>0;
+showPhotos(document.getElementById('homePhotos'), GALLERY.slice(0,3));
+document.getElementById('homePhotos').closest('.sec').hidden = GALLERY.length===0;
+document.querySelectorAll('[data-photos]').forEach(function(box){
+  var list=EVENT_PHOTOS[box.getAttribute('data-photos')]||[];
+  showPhotos(box, list);
+  var none=document.querySelector('[data-no-photos="'+box.getAttribute('data-photos')+'"]');
+  box.hidden = !list.length; if(none) none.hidden = list.length>0;
+});
+// Events switch over by date: data-until shows through that day, data-from shows from that day.
+var d=new Date(), today=d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2);
+document.querySelectorAll('[data-until]').forEach(function(el){el.hidden = today>el.getAttribute('data-until');});
+document.querySelectorAll('[data-from]').forEach(function(el){el.hidden = today<el.getAttribute('data-from');});
 var pages=[].slice.call(document.querySelectorAll('[data-page]')),
     links=[].slice.call(document.querySelectorAll('nav a')),
     siteTitle=document.title;
