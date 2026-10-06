@@ -6,7 +6,7 @@
 <title>The Heath's Vryburg M.C.C.</title>
 <meta name="description" content="Vryburg's friendliest motorcycle club. Social rides, joy rides and good company on the open roads of the North West. All riders and all bikes welcome.">
 <meta name="theme-color" content="#0C0E14">
-<link rel="icon" type="image/jpeg" href="images/patch.jpg">
+<link rel="icon" type="image/png" href="images/patch-icon.png">
 <link rel="apple-touch-icon" href="images/patch.jpg">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="The Heath's Vryburg M.C.C.">
@@ -14,8 +14,8 @@
 <meta property="og:description" content="Vryburg's friendliest motorcycle club. Social rides, joy rides and good company on the open roads of the North West.">
 <meta property="og:url" content="https://tzablaze.github.io/The-Heath-s.github.io/">
 <meta property="og:image" content="https://tzablaze.github.io/The-Heath-s.github.io/images/patch.jpg">
-<meta property="og:image:width" content="420">
-<meta property="og:image:height" content="420">
+<meta property="og:image:width" content="600">
+<meta property="og:image:height" content="600">
 <meta property="og:image:alt" content="The Heath's Vryburg M.C.C. club patch">
 <link href="https://fonts.googleapis.com/css2?family=Bevan&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
@@ -38,7 +38,7 @@ p{max-width:62ch;margin-bottom:.9rem}
 /* nav */
 nav{position:sticky;top:0;z-index:5;background:rgba(12,14,20,.96);border-bottom:2px solid var(--navy)}
 nav .wrap{display:flex;align-items:center;gap:.5rem;overflow-x:auto;padding-top:.5rem;padding-bottom:.5rem;scrollbar-width:none}
-nav img{width:44px;height:44px;object-fit:cover;mix-blend-mode:lighten;flex:none}
+nav img{width:44px;height:44px;flex:none}
 nav a{white-space:nowrap;text-decoration:none;padding:.5rem .9rem;border-radius:999px;font-weight:700;font-size:.95rem;color:var(--muted)}
 nav a:hover{color:var(--cream)}
 nav a.on{background:var(--gold);color:var(--ink)}
@@ -51,7 +51,7 @@ nav a.on{background:var(--gold);color:var(--ink)}
 /* shared */
 .pg{padding:2rem 0 1rem}
 .hero{display:grid;gap:1.5rem;align-items:center;padding:1rem 0 2rem}
-.patch{width:min(62vw,260px);height:auto;mix-blend-mode:lighten;animation:rise .9s ease-out both}
+.patch{display:block;margin:0 auto;width:min(62vw,260px);height:auto;animation:rise .9s ease-out both}
 .hero .lead{color:var(--muted);font-size:1.15rem;margin:1rem 0 1.5rem}
 @media(min-width:760px){.hero{grid-template-columns:300px 1fr;gap:3rem}.patch{width:100%}}
 @keyframes rise{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:none}}
@@ -80,6 +80,19 @@ nav a.on{background:var(--gold);color:var(--ink)}
 .poster{width:100%;height:auto;max-width:520px;border-radius:18px;border:2px dashed var(--red);display:block;margin-top:1.25rem}
 .zoom{display:inline-block;max-width:520px;width:100%;text-decoration:none}
 .zoom small{display:block;color:var(--muted);font-size:.85rem;margin-top:.4rem}
+[data-view]{cursor:zoom-in}
+/* full-screen photo viewer */
+.viewer{width:100vw;height:100vh;height:100dvh;max-width:none;max-height:none;margin:0;padding:0;border:0;background:rgba(5,6,10,.97);color:var(--cream)}
+.viewer::backdrop{background:rgba(5,6,10,.97)}
+.viewer[open]{display:flex;flex-direction:column;align-items:center;justify-content:center}
+.viewer img{max-width:100%;max-height:calc(100dvh - 7.5rem);object-fit:contain;display:block;border-radius:6px;touch-action:pan-y}
+.viewer p{margin:.75rem 1rem 0;text-align:center;color:var(--muted);max-width:60ch}
+.viewer button{position:absolute;background:rgba(28,47,92,.85);color:var(--cream);border:0;border-radius:50%;width:48px;height:48px;font:700 1.5rem/1 var(--body);cursor:pointer}
+.viewer button:hover{background:var(--navy)}
+.viewer .x{top:.75rem;right:.75rem}
+.viewer .prev{left:.5rem;top:50%;transform:translateY(-50%)}
+.viewer .next{right:.5rem;top:50%;transform:translateY(-50%)}
+.viewer .count{position:absolute;top:1.3rem;left:1rem;margin:0;font-size:.9rem}
 .tile{display:block;border:2px solid var(--cream);border-radius:14px;padding:.7rem 1rem;text-decoration:none;line-height:1.35}
 .tile:hover{background:rgba(236,230,214,.1)}.tile small{display:block;color:var(--muted)}
 .gal{columns:2 150px;column-gap:.75rem;margin-top:1rem}
@@ -102,7 +115,7 @@ footer{border-top:2px dashed var(--red);margin-top:2.5rem;padding:1.5rem 0 2.5re
 </head>
 <body>
 <nav aria-label="Main"><div class="wrap">
-<img src="images/patch.jpg" width="44" height="44" alt="The Heath's Vryburg M.C.C. patch">
+<img src="images/patch-icon.png" width="44" height="44" alt="The Heath's Vryburg M.C.C. patch">
 <a href="#home" data-go="home">Home</a><a href="#about" data-go="about">About</a><a href="#rides" data-go="rides">Rides</a><a href="#gallery" data-go="gallery">Gallery</a><a href="#events" data-go="events">Events</a><a href="#join" data-go="join">Join Us</a><a href="#contact" data-go="contact">Contact</a>
 </div></nav>
 
@@ -111,7 +124,7 @@ footer{border-top:2px dashed var(--red);margin-top:2.5rem;padding:1.5rem 0 2.5re
 <!-- HOME -->
 <section class="pg" data-page="home">
   <div class="hero">
-    <img class="patch" alt="Club patch: a rider on a green motorcycle in a blue badge with red stitching" src="images/patch.jpg" width="420" height="420">
+    <img class="patch" alt="Club patch: a rider on a green motorcycle in a blue badge with red stitching" src="images/patch.webp" width="600" height="600">
     <div>
       <h1>Ride with us. Vryburg's friendliest motorcycle club.</h1>
       <p class="lead">Social rides, joy rides and good company on the open roads of the North West.</p>
@@ -136,7 +149,7 @@ footer{border-top:2px dashed var(--red);margin-top:2.5rem;padding:1.5rem 0 2.5re
     <h2>Next up: The Mielie 300 Run</h2>
     <p class="when">Saturday 7 November, starts 10:00, at Old Chaps Vryburg</p>
     <p>A 300km ride for the keen, and a day jol for everyone else.</p>
-    <div class="btns"><a class="btn p" href="#events" data-go="events">See the details</a></div>
+    <div class="btns"><a class="btn p" href="https://docs.google.com/forms/d/e/1FAIpQLSfyQT2-fZ-mtoI1-d_RPP9_V2_lgsIO5ecW7scQvhi0c56PUg/viewform" target="_blank" rel="noopener">Sign up for the run</a><a class="btn g" href="#events" data-go="events">See the details</a></div>
   </div></div>
   <div class="sec" data-from="2026-11-08" hidden><div class="band">
     <h2>That's a wrap: The Mielie 300 Run</h2>
@@ -204,17 +217,18 @@ footer{border-top:2px dashed var(--red);margin-top:2.5rem;padding:1.5rem 0 2.5re
     <p class="when">Saturday 7 November, starts 10:00, at Old Chaps Vryburg</p>
     <p>A 300km ride for the keen, and a day jol for everyone else. Every entry includes a cloth badge.</p>
     <ul class="tiers">
-      <li><strong>300km ride: R300 per person</strong><span>Pre-entry only. Limited to 60 bikes.</span></li>
-      <li><strong>Day jol: R100 per person</strong><span>All welcome.</span></li>
-      <li><strong>Day jol, pay at the gates: R350 per person</strong><span>All welcome.</span></li>
+      <li><strong>300km ride, pre-entry: R300 per person</strong><span>Includes the day jol. Limited to 60 bikes.</span></li>
+      <li><strong>300km ride, entry on the day: R350 per person</strong><span>Includes the day jol.</span></li>
+      <li><strong>Day jol only: R100 per person</strong><span>All welcome.</span></li>
     </ul>
+    <div class="btns"><a class="btn p" href="https://docs.google.com/forms/d/e/1FAIpQLSfyQT2-fZ-mtoI1-d_RPP9_V2_lgsIO5ecW7scQvhi0c56PUg/viewform" target="_blank" rel="noopener">Sign up for the run</a></div>
     <p>Cash bar on site with refreshments all day. Please leave the cooler box at home.</p>
     <h3>Entries and queries</h3>
     <div class="btns">
       <a class="tile" href="tel:+27715262515">Dian, President<small>071 526 2515</small></a>
       <a class="tile" href="tel:+27832717313">Muller, Vice President<small>083 271 7313</small></a>
     </div>
-    <a class="zoom" href="images/mielie-300-poster.jpg" target="_blank" rel="noopener"><img class="poster" alt="Poster for The Mielie 300 Run, 7 November at Old Chaps Vryburg" src="images/mielie-300-poster.jpg" width="760" height="735" loading="lazy"><small>Tap the poster to open it full size</small></a>
+    <a class="zoom" href="images/mielie-300-poster.jpg" data-view><img class="poster" alt="Poster for The Mielie 300 Run, 7 November at Old Chaps Vryburg" src="images/mielie-300-poster.jpg" width="760" height="735" loading="lazy"><small>Tap the poster to see it full screen</small></a>
   </div></div>
   <div class="sec"><h2>Past events</h2>
     <div class="past" data-from="2026-11-08" hidden>
@@ -273,6 +287,15 @@ footer{border-top:2px dashed var(--red);margin-top:2.5rem;padding:1.5rem 0 2.5re
 <footer>The Heath's Vryburg M.C.C. Vryburg, North West, South Africa. Ride safe, ride together.</footer>
 </main>
 
+<dialog class="viewer" id="viewer" aria-label="Photo viewer">
+  <span class="count" id="vCount"></span>
+  <button class="x" id="vClose" aria-label="Close">&times;</button>
+  <button class="prev" id="vPrev" aria-label="Previous photo">&lsaquo;</button>
+  <img id="vImg" alt="">
+  <p id="vCap"></p>
+  <button class="next" id="vNext" aria-label="Next photo">&rsaquo;</button>
+</dialog>
+
 <script>
 /* ===== EDIT THESE ===== */
 var C = {
@@ -318,8 +341,7 @@ function showPhotos(box, list){
   list.forEach(function(p){
     var f=document.createElement('figure'),i=document.createElement('img');
     i.src=p[0];i.alt=p[1]||'Club ride photo';i.loading='lazy';
-    if(p[2]){var a=document.createElement('a');a.href=p[2];a.target='_blank';a.rel='noopener';a.appendChild(i);f.appendChild(a);}
-    else f.appendChild(i);
+    var a=document.createElement('a');a.href=p[2]||p[0];a.setAttribute('data-view','');a.appendChild(i);f.appendChild(a);
     if(p[1]){var c=document.createElement('figcaption');c.textContent=p[1];f.appendChild(c);}
     box.appendChild(f);
   });
@@ -368,6 +390,53 @@ document.addEventListener('click',function(e){
   if(a && a.getAttribute('href')===location.hash){e.preventDefault();go(a.getAttribute('data-go'),true);}
 });
 window.addEventListener('hashchange',function(){route(true);});
+
+// Full-screen photo viewer: photos open on the same page instead of a new tab.
+var V=document.getElementById('viewer'), vImg=document.getElementById('vImg'), vCap=document.getElementById('vCap'),
+    vCount=document.getElementById('vCount'), vPrev=document.getElementById('vPrev'), vNext=document.getElementById('vNext'),
+    vList=[], vAt=0, vOpener=null;
+function vShow(n){
+  vAt=(n+vList.length)%vList.length;
+  var a=vList[vAt], img=a.querySelector('img'), cap=img?img.alt:'';
+  vImg.src=a.getAttribute('href'); vImg.alt=cap; vCap.textContent=cap;
+  var many=vList.length>1; vPrev.hidden=vNext.hidden=vCount.hidden=!many;
+  vCount.textContent=(vAt+1)+' / '+vList.length;
+}
+function vOpen(a){
+  var box=a.closest('.gal,.strip');
+  vList=box?[].slice.call(box.querySelectorAll('[data-view]')):[a];
+  vOpener=a; vShow(vList.indexOf(a));
+  if(!V.open){
+    if(typeof V.showModal!=='function'){window.location.href=a.getAttribute('href');return;}
+    history.pushState({viewer:1},'',location.href); // so the phone's Back button closes the photo
+    document.documentElement.style.overflow='hidden';
+    V.showModal();
+  }
+}
+function vClose(){ if(history.state&&history.state.viewer) history.back(); else if(V.open) V.close(); }
+V.addEventListener('close',function(){
+  document.documentElement.style.overflow=''; vImg.removeAttribute('src');
+  if(vOpener) vOpener.focus({preventScroll:true});
+});
+window.addEventListener('popstate',function(){ if(V.open) V.close(); });
+V.addEventListener('cancel',function(e){e.preventDefault();vClose();});
+document.getElementById('vClose').addEventListener('click',vClose);
+vPrev.addEventListener('click',function(){vShow(vAt-1);});
+vNext.addEventListener('click',function(){vShow(vAt+1);});
+V.addEventListener('click',function(e){ if(e.target===V) vClose(); });
+V.addEventListener('keydown',function(e){
+  if(e.key==='ArrowLeft') vShow(vAt-1); else if(e.key==='ArrowRight') vShow(vAt+1);
+});
+var tx=null;
+V.addEventListener('touchstart',function(e){tx=e.touches[0].clientX;},{passive:true});
+V.addEventListener('touchend',function(e){
+  if(tx===null||vList.length<2)return; var dx=e.changedTouches[0].clientX-tx; tx=null;
+  if(Math.abs(dx)>50) vShow(vAt+(dx<0?1:-1));
+});
+document.addEventListener('click',function(e){
+  var a=e.target.closest('[data-view]'); if(!a)return;
+  e.preventDefault(); vOpen(a);
+});
 route(false);
 </script>
 </body>
