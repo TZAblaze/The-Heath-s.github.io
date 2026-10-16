@@ -77,6 +77,13 @@ nav a.on{background:var(--gold);color:var(--ink)}
 .tiers li{background:rgba(12,14,20,.45);border-left:5px solid var(--gold);padding:.75rem 1rem;border-radius:0 12px 12px 0}
 .tiers li:nth-child(2){border-left-color:#5E86C9}.tiers li:nth-child(3){border-left-color:var(--green)}
 .tiers strong{display:block;font-size:1.1rem}.tiers span{color:var(--muted);font-size:.95rem}
+.lodges{display:grid;gap:1rem;margin:1rem 0 1.5rem}
+@media(min-width:760px){.lodges{grid-template-columns:1fr 1fr}}
+.lodge{background:rgba(12,14,20,.45);border-radius:16px;padding:1.1rem 1.1rem 1.2rem}
+.lodge h4{font-family:var(--head);font-weight:400;font-size:1.15rem;margin:0}
+.lodge .addr{color:var(--muted);font-size:.95rem;margin:.1rem 0 0}
+.lodge .tiers{margin:.9rem 0}
+.lodge .btns{margin-top:0}
 .poster{width:100%;height:auto;max-width:520px;border-radius:18px;border:2px dashed var(--red);display:block;margin-top:1.25rem}
 .zoom{display:inline-block;max-width:520px;width:100%;text-decoration:none}
 .zoom small{display:block;color:var(--muted);font-size:.85rem;margin-top:.4rem}
@@ -148,7 +155,7 @@ footer{border-top:2px dashed var(--red);margin-top:2.5rem;padding:1.5rem 0 2.5re
   <div class="sec" data-until="2026-11-07"><div class="band">
     <h2>Next up: The Mielie 300 Run</h2>
     <p class="when">Saturday 7 November, starts 10:00, at Old Chaps Vryburg</p>
-    <p>A 300km ride for the keen, and a day jol for everyone else. Special accommodation rates at our sponsor, Lavender Lodge.</p>
+    <p>A 300km ride for the keen, and a day jol for everyone else. Special accommodation rates at Lavender Lodge and Lockerbie Lodge.</p>
     <div class="btns"><a class="btn p" href="https://docs.google.com/forms/d/e/1FAIpQLSfyQT2-fZ-mtoI1-d_RPP9_V2_lgsIO5ecW7scQvhi0c56PUg/viewform" target="_blank" rel="noopener">Sign up for the run</a><a class="btn g" href="#events" data-go="events">See the details</a></div>
   </div></div>
   <div class="sec" data-from="2026-11-08" hidden><div class="band">
@@ -223,12 +230,34 @@ footer{border-top:2px dashed var(--red);margin-top:2.5rem;padding:1.5rem 0 2.5re
     </ul>
     <div class="btns"><a class="btn p" href="https://docs.google.com/forms/d/e/1FAIpQLSfyQT2-fZ-mtoI1-d_RPP9_V2_lgsIO5ecW7scQvhi0c56PUg/viewform" target="_blank" rel="noopener">Sign up for the run</a></div>
     <p>Cash bar on site with refreshments all day. Please leave the cooler box at home.</p>
-    <h3>Where to stay: Lavender Lodge</h3>
-    <p>Our sponsor, Lavender Lodge in Vryburg, is offering riders and their families a special rate for the Mielie 300 Run.</p>
-    <ul class="tiers">
-      <li><strong>Room for 2: R900</strong></li>
-      <li><strong>2 adults and 2 children: R1100</strong></li>
-    </ul>
+    <h3>Where to stay</h3>
+    <p>Two Vryburg guest houses are offering special rates for Mielie 300 Run riders and their families. Prices are per night.</p>
+    <div class="lodges">
+      <div class="lodge">
+        <h4>Lavender Lodge</h4>
+        <p class="addr">Our sponsor. 2 Molopo Street, Vryburg</p>
+        <ul class="tiers">
+          <li><strong>Room for 2: R900 per night</strong></li>
+          <li><strong>2 adults and 2 children: R1100 per night</strong></li>
+        </ul>
+        <div class="btns">
+          <a class="tile" href="tel:+27539271327">Call Lavender Lodge<small>053 927 1327</small></a>
+          <a class="tile" href="tel:+27823787392">Call Elsa<small>082 378 7392</small></a>
+        </div>
+      </div>
+      <div class="lodge">
+        <h4>Lockerbie Lodge</h4>
+        <p class="addr">55 Vrystreet, Vryburg</p>
+        <ul class="tiers">
+          <li><strong>2-bedroom: R900</strong><span>1 night. R1600 for 2 nights.</span></li>
+          <li><strong>Double room: R800</strong><span>1 night. R1500 for 2 nights.</span></li>
+        </ul>
+        <div class="btns">
+          <a class="tile" href="tel:+27836078976">Call Lockerbie Lodge<small>083 607 8976</small></a>
+          <a class="tile" href="tel:+27836600301">Or call<small>083 6600 301</small></a>
+        </div>
+      </div>
+    </div>
     <h3>Entries and queries</h3>
     <div class="btns">
       <a class="tile" href="tel:+27715262515">Dian, President<small>071 526 2515</small></a>
